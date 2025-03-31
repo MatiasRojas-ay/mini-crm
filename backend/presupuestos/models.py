@@ -11,6 +11,7 @@ class Presupuesto(models.Model):
     monto_total = models.DecimalField(max_digits=10, decimal_places=2)
     estado = models.CharField(max_length=20, choices=ESTADOS, default='enviado')
     fecha_creacion = models.DateField(auto_now_add=True)
+    fecha_vencimiento = models.DateField(null=True, blank=True)
 
     def __str__(self):
         return f"Presupuesto #{self.id} - {self.cliente.nombre}"

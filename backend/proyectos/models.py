@@ -1,5 +1,6 @@
 from django.db import models
 from clientes.models import Cliente
+from presupuestos.models import Presupuesto
 
 class Proyecto(models.Model):
     ESTADOS = [
@@ -13,6 +14,7 @@ class Proyecto(models.Model):
     estado = models.CharField(max_length=20, choices=ESTADOS, default='pendiente')
     fecha_inicio = models.DateField(null=True, blank=True)
     fecha_fin = models.DateField(null=True, blank=True)
+    presupuesto = models.ForeignKey(Presupuesto, on_delete=models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return f"{self.nombre} ({self.cliente.nombre})"

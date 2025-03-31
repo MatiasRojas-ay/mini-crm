@@ -5,7 +5,7 @@ from .models import Presupuesto, Pago
 
 @admin.register(Presupuesto)
 class PresupuestoAdmin(ModelAdmin):
-    list_display = ("id", "cliente", "monto_total", "estado", "fecha_creacion")
+    list_display = ("id", "cliente", "monto_total", "estado", "fecha_creacion", "fecha_vencimiento")
     list_filter = ("estado", "fecha_creacion")
     search_fields = ("cliente__nombre",)
 
