@@ -52,6 +52,9 @@ INSTALLED_APPS = [
 
 UNFOLD = {
 
+    "SITE_TITLE": "Mini-CRM",
+    "SITE_HEADER": "Mini-CRM",
+
     "DARK_MODE": True,
 
     "COLORS": {

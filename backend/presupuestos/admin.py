@@ -18,7 +18,7 @@ class PresupuestoAdmin(ModelAdmin):
         }),
         ("Fechas y Monto", {
             "classes": ["tab"],
-            "fields": ("monto_total", "fecha_creacion", "fecha_vencimiento"),
+            "fields": ("monto_total", "fecha_vencimiento"),
         }),
     )
 

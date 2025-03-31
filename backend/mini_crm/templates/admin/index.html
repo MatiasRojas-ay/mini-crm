@@ -18,17 +18,50 @@
 {% block content %}
   {% component "unfold/components/container.html" %}
     <h1 class="text-2xl font-bold mb-4">Dashboard</h1>
+
+    <!-- Sección: Clientes y Proyectos -->
+    <h2 class="text-xl mt-8 mb-2 text-gray-800">Clientes y Proyectos</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-      {% for metric in kpis %}
+      {% for metric in kpis|slice:":3" %}
         {% component "unfold/components/card.html" %}
-          {% component "unfold/components/text.html" %}
-            {{ metric.title }}
-          {% endcomponent %}
-          {% component "unfold/components/title.html" %}
-            {{ metric.metric }}
-          {% endcomponent %}
+          {% component "unfold/components/text.html" %}{{ metric.title }}{% endcomponent %}
+          {% component "unfold/components/title.html" %}{{ metric.metric }}{% endcomponent %}
         {% endcomponent %}
       {% endfor %}
     </div>
+
+    <!-- Sección: Tareas -->
+    <h2 class="text-xl mt-8 mb-2 text-gray-800">Tareas</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {% for metric in kpis|slice:"3:7" %}
+        {% component "unfold/components/card.html" %}
+          {% component "unfold/components/text.html" %}{{ metric.title }}{% endcomponent %}
+          {% component "unfold/components/title.html" %}{{ metric.metric }}{% endcomponent %}
+        {% endcomponent %}
+      {% endfor %}
+    </div>
+
+    <!-- Sección: Presupuestos -->
+    <h2 class="text-xl mt-8 mb-2 text-gray-800">Presupuestos</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {% for metric in kpis|slice:"7:11" %}
+        {% component "unfold/components/card.html" %}
+          {% component "unfold/components/text.html" %}{{ metric.title }}{% endcomponent %}
+          {% component "unfold/components/title.html" %}{{ metric.metric }}{% endcomponent %}
+        {% endcomponent %}
+      {% endfor %}
+    </div>
+
+    <!-- Sección: Finanzas y Responsables -->
+    <h2 class="text-xl mt-8 mb-2 text-gray-800">Finanzas y Responsables</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {% for metric in kpis|slice:"11:" %}
+        {% component "unfold/components/card.html" %}
+          {% component "unfold/components/text.html" %}{{ metric.title }}{% endcomponent %}
+          {% component "unfold/components/title.html" %}{{ metric.metric }}{% endcomponent %}
+        {% endcomponent %}
+      {% endfor %}
+    </div>
+
   {% endcomponent %}
 {% endblock %}
