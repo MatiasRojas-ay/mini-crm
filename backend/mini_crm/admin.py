@@ -2,6 +2,7 @@ from clientes.models import Cliente
 from proyectos.models import Proyecto, Tarea, Responsable
 from presupuestos.models import Presupuesto, Pago
 
+
 def dashboard_callback(request, context):
     """
     Dashboard personalizado para Unfold.

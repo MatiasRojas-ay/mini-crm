@@ -2,12 +2,14 @@ from django.db import models
 from clientes.models import Cliente
 from presupuestos.models import Presupuesto
 
+
 class Responsable(models.Model):
     nombre = models.CharField(max_length=100)
     email = models.EmailField(blank=True)
 
     def __str__(self):
         return self.nombre
+
 
 class Proyecto(models.Model):
     ESTADOS = [
@@ -25,6 +27,7 @@ class Proyecto(models.Model):
 
     def __str__(self):
         return f"{self.nombre} ({self.cliente.nombre})"
+
 
 class Tarea(models.Model):
     PRIORIDADES = [

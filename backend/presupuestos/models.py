@@ -1,6 +1,7 @@
 from django.db import models
 from clientes.models import Cliente
 
+
 class Presupuesto(models.Model):
     ESTADOS = [
         ('enviado', 'Enviado'),
@@ -15,6 +16,7 @@ class Presupuesto(models.Model):
 
     def __str__(self):
         return f"Presupuesto #{self.id} - {self.cliente.nombre}"
+
 
 class Pago(models.Model):
     presupuesto = models.ForeignKey(Presupuesto, on_delete=models.CASCADE, related_name='pagos')
