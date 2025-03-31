@@ -46,6 +46,5 @@ class Tarea(models.Model):
     fecha_limite = models.DateField(null=True, blank=True)
     responsable = models.ForeignKey(Responsable, on_delete=models.SET_NULL, null=True, blank=True)
 
-
     def __str__(self):
         return f"{self.titulo} ({self.proyecto.nombre})"
