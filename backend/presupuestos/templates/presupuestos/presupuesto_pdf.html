@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Presupuesto #{{ presupuesto.id }}</title>
+    <style>
+        body { font-family: sans-serif; margin: 2em; }
+        h1 { color: #333; }
+        table { width: 100%; margin-top: 1em; border-collapse: collapse; }
+        td, th { padding: 0.5em; border: 1px solid #ccc; }
+    </style>
+</head>
+<body>
+    <h1>Presupuesto #{{ presupuesto.id }}</h1>
+    <p><strong>Cliente:</strong> {{ presupuesto.cliente.nombre }}</p>
+    <p><strong>Fecha de creación:</strong> {{ presupuesto.fecha_creacion }}</p>
+    <p><strong>Vencimiento:</strong> {{ presupuesto.fecha_vencimiento|default:"-" }}</p>
+    <p><strong>Estado:</strong> {{ presupuesto.get_estado_display }}</p>
+    <p><strong>Monto total:</strong> ${{ presupuesto.monto_total }}</p>
+</body>
+</html>

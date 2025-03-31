@@ -4,7 +4,7 @@ from .models import Proyecto, Tarea
 
 @admin.register(Proyecto)
 class ProyectoAdmin(ModelAdmin):
-    list_display = ("nombre", "cliente", "estado", "fecha_inicio", "fecha_fin")
+    list_display = ("nombre", "cliente", "estado", "presupuesto", "fecha_inicio", "fecha_fin")
     list_filter = ("estado",)
     search_fields = ("nombre", "cliente__nombre")
 
