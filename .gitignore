@@ -1,14 +1,20 @@
 # Entorno virtual
 venv/
+.env
 
 # Archivos de Python
 __pycache__/
 *.py[cod]
+
+# Archivos de base de datos locales
 *.sqlite3
 
-# Archivos temporales
+# Archivos temporales / caché
 *.log
 *.pot
 *.mo
 *.swp
 .DS_Store
+
+# Ignorar migraciones
+**/migrations/
