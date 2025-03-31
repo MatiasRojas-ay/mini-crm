@@ -2,6 +2,13 @@ from django.db import models
 from clientes.models import Cliente
 from presupuestos.models import Presupuesto
 
+class Responsable(models.Model):
+    nombre = models.CharField(max_length=100)
+    email = models.EmailField(blank=True)
+
+    def __str__(self):
+        return self.nombre
+
 class Proyecto(models.Model):
     ESTADOS = [
         ('pendiente', 'Pendiente'),
@@ -37,6 +44,8 @@ class Tarea(models.Model):
     prioridad = models.CharField(max_length=10, choices=PRIORIDADES, default='media')
     estado = models.CharField(max_length=20, choices=ESTADOS, default='pendiente')
     fecha_limite = models.DateField(null=True, blank=True)
+    responsable = models.ForeignKey(Responsable, on_delete=models.SET_NULL, null=True, blank=True)
+
 
     def __str__(self):
         return f"{self.titulo} ({self.proyecto.nombre})"
