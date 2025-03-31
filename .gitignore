@@ -1,0 +1,14 @@
+# Entorno virtual
+venv/
+
+# Archivos de Python
+__pycache__/
+*.py[cod]
+*.sqlite3
+
+# Archivos temporales
+*.log
+*.pot
+*.mo
+*.swp
+.DS_Store
