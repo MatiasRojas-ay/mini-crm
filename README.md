@@ -107,13 +107,37 @@ python backend/manage.py runserver
 Ir a: http://localhost:8000/admin/
 
 
-## 🧪 Datos de prueba (opcional)
+## 🧪 Datos de prueba
 
-Proximamente: comando para generar datos de ejemplo.
+Podés cargar datos ficticios ejecutando el script:
 
-## 📸 Capturas
+```bash
+python backend/datos_prueba.py
+```
 
-Próximamente: capturas del panel, dashboard y descarga de PDF.
+### Dashboard
+
+![Dashboard](docs/screenshots/dashboard.png)
+
+### Listado de clientes
+
+![Listado de Clientes](docs/screenshots/clientes_listado.png)
+
+### Detalle de Proyecto con Tabs
+
+![Detalle de Proyecto](docs/screenshots/proyecto_detalle.png)
+
+### Formulario de Tareas
+
+![Formulario de Tarea](docs/screenshots/tarea_formulario.png)
+
+### Presupuestos con botón PDF
+
+![Presupuestos](docs/screenshots/presupuestos_lista.png)
+
+### PDF generado con WeasyPrint
+
+![PDF generado](docs/screenshots/presupuesto_pdf.png)
 
 ## 📁 Estructura del proyecto
 
